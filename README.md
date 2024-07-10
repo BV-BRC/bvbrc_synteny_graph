@@ -9,3 +9,11 @@ Whole-genome alignment and pan-genome analysis are useful tools in understanding
 This module is a component of the BV-BRC build system. It is designed to fit into the
 `dev_container` infrastructure which manages development and production deployment of
 the components of the BV-BRC. More documentation is available [here](https://github.com/BV-BRC/dev_container/tree/master/README.md).
+
+## References
+
+Panaconda: Application of pan-synteny graph models to genome content analysis
+Andrew S. Warren, James J. Davis, Alice R. Wattam, Dustin Machi, João C. Setubal, Lenwood S. Heath
+bioRxiv 215988; doi: https://doi.org/10.1101/215988
+
+https://github.com/aswarren/pangenome_graphs
