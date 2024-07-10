@@ -1,8 +1,8 @@
-# BV-BRC Module
+# Synteny Graph
 
 ## Overview
 
-This repository holds a BV-BRC module.
+Whole-genome alignment and pan-genome analysis are useful tools in understanding the similarities and differences of many genomes in an evolutionary context. Here we introduce the concept of pan-synteny graphs, an analysis method that combines elements of both to represent conservation and change of multiple prokaryotic genomes at an architectural level. Pan-synteny graphs represent a reference free approach for the comparison of many genomes and allows for the identification of synteny, insertion, deletion, replacement, inversion, recombination, missed assembly joins, evolutionary hotspots, and reference based scaffolding.
 
 ## About this module
 
