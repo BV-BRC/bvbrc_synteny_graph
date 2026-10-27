@@ -79,7 +79,12 @@ sub process_synteny
     #/home/asw3xp/projects/git_repos/cid_work/pangenome_graphs/fam_to_graph.py
     ##my @cmd = ("fam_to_graph.py", "--ksize", $params_to_app->{ksize}, "--diversity", $params_to_app->{diversity},\
     
-    my @cmd = ("panaconda", "--ksize", $params_to_app->{ksize}, "--diversity", $params_to_app->{diversity},"--alpha", $params_to_app->{alpha}, "--layout", "--context", $params_to_app->{context}, "--output", "$work_dir/ps_graph.gexf", "--gfa", "$work_dir/ps_graph.gfa", "--patric_genomes", $gdesc);
+    my @cmd = ("panaconda", "--ksize", $params_to_app->{ksize}, "--diversity", $params_to_app->{diversity}, "--alpha", $params_to_app->{alpha}, "--layout", "--context", $params_to_app->{context}, "--output", "$work_dir/ps_graph.gexf", "--gfa", "$work_dir/ps_graph.gfa");
+    if (defined $params_to_app->{min} && $params_to_app->{min} ne "")
+    {
+	push @cmd, ("--min", $params_to_app->{min});
+    }
+    push @cmd, ("--patric_genomes", $gdesc);
 
     warn Dumper(\@cmd, $params_to_app);
 
@@ -91,12 +96,16 @@ sub process_synteny
 
 
     my @output_suffixes = ([qr/\.gexf$/, "txt"],
-               [qr/\.gfa$/, "txt"],
+			   [qr/\.gfa$/, "txt"],
+			   [qr/\.tsv$/, "tsv"],
+			   [qr/\.csv$/, "csv"],
+			   [qr/\.json$/, "json"],
 			   [qr/\.txt$/, "txt"]);
 
     my $outfile;
     opendir(D, $work_dir) or die "Cannot opendir $work_dir: $!";
     my @files = sort { $a cmp $b } grep { -f "$work_dir/$_" } readdir(D);
+    closedir(D);
 
     my $output=1;
     for my $file (@files)
