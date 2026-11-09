@@ -95,11 +95,14 @@ sub process_synteny
     }
 
 
-    my @output_suffixes = ([qr/\.gexf$/, "txt"],
+    my @output_suffixes = ([qr/\.gexf$/, "gexf"],
 			   [qr/\.gfa$/, "txt"],
+			   [qr/\.agp$/, "txt"],
+			   [qr/\.tab$/, "tsv"],
 			   [qr/\.tsv$/, "tsv"],
 			   [qr/\.csv$/, "csv"],
 			   [qr/\.json$/, "json"],
+			   [qr/\.nwk$/, "nwk"],
 			   [qr/\.txt$/, "txt"]);
 
     my $outfile;
