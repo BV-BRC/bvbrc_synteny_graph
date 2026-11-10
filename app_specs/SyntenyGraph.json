@@ -60,6 +60,14 @@
       "label": "Alphabet to use to group genes",
       "desc": "Alphabet to use to group genes",
       "type": "string"
+    },
+    {
+      "id": "min",
+      "required": 0,
+      "default": 1,
+      "label": "Minimum sequences aligned",
+      "desc": "Minimum required sequences aligned to be in the resulting graph",
+      "type": "int"
     }
   ]
 }
